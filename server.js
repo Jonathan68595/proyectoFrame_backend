@@ -1,13 +1,20 @@
-const express = require("express");
-const cors = require("cors");
-const path = require("path");
+require('dotenv').config()
+const express = require("express")
+const cors = require("cors")
+const path = require("path")
 const { logger } = require('./middleware/logger')
 const manejadorError = require('./middleware/manejadorErrores')
 const cookieParser = require('cookie-parser')
 const opcionesCors = require('./config/opcionesCors')
+const conectarBD = require('./config/bdConn')
+const mongoose = require('mongoose')
+const { logEventos } = require('./middleware/logger')
 const PORT = process.env.PORT;
 // app de express
 const app = express();
+
+//conectar a la bd
+conectarBD();
 
 //aplicamos el logger
 app.use(logger)
@@ -47,5 +54,21 @@ app.get('^/$|/inicio(.html)?', (req, res) => {
 //app.use("/api/v1/profesores", profesores);
 // En caso de que se vayan a otra url mandar un 404 status, el * indica el wildcard
 app.use(manejadorError)
+
+//Verificamos que la coneccion a la bd fue exitosa con un listen a la app
+mongoose.connection.once('open', () => {
+    console.log('Conectado a MongoDB')
+    app.listen(PORT, () => {
+        console.log('Server corriendo en el puerto: ' + PORT);
+    });
+})
+
+//Checamos en la consola y registramos en el logger si hay un error
+mongoose.connection.on('error', err => {
+    console.log(err)
+    logEventos(`${err.no}: ${err.code}\t${err.syscall}\t${err.hostname}`,
+        'mongoErrLog.log')
+})
+
 // exportamos la app en modulo
 module.exports = app;
