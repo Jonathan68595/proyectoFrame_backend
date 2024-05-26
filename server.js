@@ -28,6 +28,10 @@ app.use(cookieParser())
 //el url depende de el controlador de las rutas
 app.use('/', require('./rutas/root'));
 
+
+//PENDIENTE
+app.use('/profesores', require('./rutas/rutasProfesor'))
+
 //IMPORTANTE LUEGO USAR app.use PARA LOS CSS ARCHIVOS ESTATICOS
 
 

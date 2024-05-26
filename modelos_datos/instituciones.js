@@ -19,7 +19,7 @@ const schemaInstituciones = new mongoose.Schema({
     unique: true
    },
    profesor: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'profesor',
     required: true
    }
@@ -28,4 +28,4 @@ const schemaInstituciones = new mongoose.Schema({
     timestamps: true 
 })
 
-module.exports = mongoose.model(instituciones, schemaInstituciones)
+module.exports = mongoose.model('instituciones', schemaInstituciones)

@@ -36,4 +36,4 @@ const schemaProfesores = new mongoose.Schema({
 
 
 
-module.exports = mongoose.model(profesor, schemaProfesores)
+module.exports = mongoose.model('profesor', schemaProfesores)

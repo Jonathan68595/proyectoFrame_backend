@@ -1,0 +1,6 @@
+20240526	07:00:48	b058cf51-4caf-4bcd-923e-dd67e4992d92	SyntaxError: Expected double-quoted property name in JSON at position 242 (line 9 column 1)	POST	/profesores	undefined
+20240526	07:13:10	7600b321-830e-43e1-a6a7-4fac90e97775	CastError: Cast to ObjectId failed for value "665332995b34886fcb5b5f391" (type string) at path "_id" for model "profesor"	PATCH	/profesores	undefined
+20240526	07:14:23	5c018a38-7924-4f3d-820a-97bc1dc44a3b	ReferenceError: contrasena is not defined	PATCH	/profesores	undefined
+20240526	07:16:27	5e010b6c-e8bc-44cc-86a1-4c7046e9ef90	CastError: Cast to ObjectId failed for value "665332995b34886fcb5b5f391" (type string) at path "_id" for model "profesor"	PATCH	/profesores	undefined
+20240526	07:19:37	67131a3d-967f-4c1e-9e98-87624510c345	CastError: Cast to ObjectId failed for value "665332995b34886fcb5b5f391" (type string) at path "_id" for model "profesor"	PATCH	/profesores	undefined
+20240526	07:22:26	26fb6bd4-f8d7-43cb-8dc3-8ac967256674	CastError: Cast to ObjectId failed for value "665332995b34886fcb5b5f391" (type string) at path "profesor" for model "instituciones"	DELETE	/profesores	undefined
