@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 
+   //Schema para nuestra coleccion profesores
 const schemaProfesores = new mongoose.Schema({
    nombre: {
     type: String,

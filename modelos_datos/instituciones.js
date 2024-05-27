@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 
+   //Schema para nuestra coleccion instituciones
 const schemaInstituciones = new mongoose.Schema({
    nombre: {
     type: String,
@@ -18,6 +19,7 @@ const schemaInstituciones = new mongoose.Schema({
     required: true,
     unique: true
    },
+   //Este profesor ya es creado y esta asociado con su id 
    profesor: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'profesor',
@@ -28,4 +30,7 @@ const schemaInstituciones = new mongoose.Schema({
     timestamps: true 
 })
 
+
 module.exports = mongoose.model('instituciones', schemaInstituciones)
+
+//LUEGO CAMBIAR MATERIAS A ARRAY Y QUE SE REFLEJE EN EL CONTROLADOR[{}]

@@ -19,18 +19,23 @@ conectarBD();
 //aplicamos el logger
 app.use(logger)
 
+//Aplicamos a la app nuestra configuracion para los origenes
 app.use(cors(opcionesCors));
+
 // indica que nuestro server va a aceptar datos json
 app.use(express.json());
 
-app.use(cookieParser())
+//USO DESPUES NO OLVIDAR
+//app.use(cookieParser())
 
-//el url depende de el controlador de las rutas
+//el url depende de el controlador de las rutas en este caso solo es el index
 app.use('/', require('./rutas/root'));
 
 
-//PENDIENTE
+//Url donde ocurren los CRUD de nuestras colecciones
 app.use('/profesores', require('./rutas/rutasProfesor'))
+
+app.use('/instituciones', require('./rutas/rutasInstitucion'))
 
 //IMPORTANTE LUEGO USAR app.use PARA LOS CSS ARCHIVOS ESTATICOS
 
@@ -49,14 +54,13 @@ app.all('*', (req, res) => {
     }
 })
 
+//prueba para que se mande a un html de inicio
 app.get('^/$|/inicio(.html)?', (req, res) => {
-    res.sendFile(path.join(__dirname, 'vistas', 'inicio.html'));
+    res.sendFile(path.join(__dirname, 'vistas', 'index.html'));
 });
 
-// rutas
-// El url de el sitio
-//app.use("/api/v1/profesores", profesores);
-// En caso de que se vayan a otra url mandar un 404 status, el * indica el wildcard
+//Aqui se activa el manejador de errores que va a hacer logs de estos mismos
+//La razon por la que esta abajo es para que pueda revisar la mayoria del proceso 
 app.use(manejadorError)
 
 //Verificamos que la coneccion a la bd fue exitosa con un listen a la app
