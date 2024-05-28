@@ -32,7 +32,14 @@ const schemaProfesores = new mongoose.Schema({
     type: String,
     required: true,
     unique: true
-   }
+   },
+   institucion: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'instituciones',
+      required: false //No es obligatorio tener una institucion registrada
+     }
+   }, {
+      timestamps: true  
 })
 
 

@@ -26,12 +26,13 @@ app.use(cors(opcionesCors));
 app.use(express.json());
 
 //USO DESPUES NO OLVIDAR
-//app.use(cookieParser())
+app.use(cookieParser())
 
 //el url depende de el controlador de las rutas en este caso solo es el index
 app.use('/', require('./rutas/root'));
 
-
+//ruta para autentificacion
+app.use('/aut', require('./rutas/rutasAut'))
 //Url donde ocurren los CRUD de nuestras colecciones
 app.use('/profesores', require('./rutas/rutasProfesor'))
 
