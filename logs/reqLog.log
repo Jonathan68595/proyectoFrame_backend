@@ -28,3 +28,10 @@
 20240526	07:22:26	5e15c64d-e151-4418-9b71-8f633033ace7	DELETE	/profesores	undefined
 20240526	07:22:43	046b2f55-9ee7-4d84-a11f-ea847b9fe993	DELETE	/profesores	undefined
 20240526	07:23:02	a7ba6fef-2671-4f9b-8caa-1ee8fdb2bf8f	GET	/profesores	undefined
+20240528	19:51:28	f26b13d5-2605-428e-9d92-2373a21770b0	GET	/pruebamapa.html	undefined
+20240528	19:52:17	930952fa-54a4-4d20-ab37-c05368fd4ba4	GET	/vistas/pruebamapa.html	undefined
+20240528	19:53:26	5d9ec2e0-6eec-486e-8c73-e99a228c4e0a	GET	/	undefined
+20240528	19:54:10	92dbf68e-fa82-4821-87a3-a8e2fb53ea1b	GET	/	undefined
+20240528	19:54:17	99dc5864-4804-4e32-8f73-021aa1a46cfa	GET	/api/v1/profesores	undefined
+20240528	19:54:23	1547d918-6af5-4e01-8b3e-87fbec7f393a	GET	/pruebamapa.html	undefined
+20240528	20:23:27	3db7d47d-8bce-45bb-97fa-ed3a97dd29ff	GET	/pruebamapa.html	undefined
